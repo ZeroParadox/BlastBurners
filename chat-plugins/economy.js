@@ -28,7 +28,7 @@ var shopDisplay = getShopDisplay(shop);
  * @returns {String}
  */
 function currencyName(amount) {
-	var name = " buck";
+	var name = " spark";
 	return amount === 1 ? name : name + "s";
 }
 
@@ -223,7 +223,7 @@ exports.commands = {
 				if (err) throw err;
 				amount = amount + currencyName(amount);
 				total = total + currencyName(total);
-				_this.sendReply(username + " losted " + amount + ". " + username + " now has " + total + ".");
+				_this.sendReply(username + " lost " + amount + ". " + username + " now has " + total + ".");
 				if (Users.get(username)) Users.get(username).popup(user.name + " has taken " + amount + " from you. You now have " + total + ".");
 				logMoney(username + " had " + amount + " taken away by " + user.name + ".");
 			});
